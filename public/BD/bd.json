@@ -1,0 +1,22 @@
+{
+  "etudiants": [
+    {
+      "id": 1,
+      "email": "etudiant1@example.com",
+      "mdp": "111",
+      "username": "israe1"
+    },
+    {
+      "id": 2,
+      "email": "etudiant2@example.com",
+      "mdp": "1",
+      "username": "etudiant2"
+    },
+    {
+      "id": 3,
+      "email": "etudiant3@example.com",
+      "mdp": "ss",
+      "username": "etudiant3"
+    }
+  ]
+}

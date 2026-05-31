@@ -1,0 +1,517 @@
+html {
+    scroll-behavior: smooth;
+    /* Add smooth scrolling for anchor links */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #07213c;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    height: 80px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 80px;
+    object-fit: contain;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: #aaccf7;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #fff;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/p.jpg');
+    background-size: cover;
+    background-position: center;
+    background-color: #070542;
+    /* Red fallback to debug if image fails */
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+}
+
+.btn-hero {
+    background-color: #aaccf7;
+    color: #192e4a;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: initial;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-hero:hover {
+    background-color: #63a6fd;
+}
+
+/* Services Section */
+.services {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.services h2 {
+    font-size: 2em;
+    margin-bottom: 40px;
+}
+
+.services-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.service-card {
+    background-color: #aaccf7;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.service-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    color: #07213c;
+}
+
+/* Form Section */
+.form-section {
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #07213c 0%, #2a4a7e 100%);
+    /* Gradient background for a modern look */
+    color: #fff;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    max-height: 500px;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.background img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.3;
+    /* Lower opacity to make form stand out */
+}
+
+.popUpVal,
+.popUpErr {
+    position: fixed;
+    top: 100px;
+    left: 65%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    border-radius: 8px;
+    padding: 15px 20px;
+    width: 400px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.popUpErr {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.btnAnnuller {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #721c24;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.hide {
+    display: none;
+}
+
+.login-box {
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    /* Gradient for a sleek look */
+    color: #333;
+    /* Darker text for contrast */
+    width: 500px;
+    height: 350px;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3),
+        /* 3D shadow effect */
+        -10px -10px 20px rgba(154, 184, 250, 0.3);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: transform 0.7s ease, box-shadow 0.3s ease;
+    /* Smooth hover effect */
+}
+
+.login-box:hover {
+    transform: translateY(-10px);
+    /* Slight lift for 3D effect on hover */
+    box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.3),
+        -15px -15px 30px rgba(255, 255, 255, 0.4);
+}
+
+.login-box h2 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    color: #333;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    /* Subtle text shadow for depth */
+}
+
+.login-box p {
+    color: #666;
+    font-family: 'Arial', sans-serif;
+    font-size: 20px;
+    margin: 8px;
+}
+
+.inputField {
+    width: 100%;
+    max-width: 350px;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #aaccf7;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #aaccf7;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.05),
+        inset -2px -2px 5px rgba(255, 255, 255, 0.5);
+    /* Inset shadow for depth */
+    transition: box-shadow 0.3s ease;
+}
+
+.inputField:focus {
+    outline: none;
+    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.1),
+        inset -3px -3px 6px rgba(255, 255, 255, 0.7);
+}
+
+.btnConnection {
+    padding: 15px;
+    background: linear-gradient(145deg, #aaccf7, #aaccf7);
+    /* Gradient for button */
+    color: #3E5879;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2),
+        -5px -5px 10px rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btnConnection:hover {
+    transform: translateY(-3px);
+    /* Slight lift on hover */
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.25),
+        -8px -8px 15px rgba(255, 255, 255, 0.35);
+}
+
+.btnDeconnection {
+    padding: 15px;
+    background: linear-gradient(145deg, #aaccf7, #aaccf7);
+    /* Gradient for button */
+    color: #3E5879;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2),
+        -5px -5px 10px rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.scan-box {
+    width: 280px;
+    height: 200px;
+    border-radius: 10px;
+    overflow: auto;
+    border: 5px solid #333;
+    background-color: #f9f9f9;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1),
+        inset -2px -2px 5px rgba(255, 255, 255, 0.5);
+}
+
+#reader {
+    width: 280px;
+    height: 300px;
+    border-radius: 10px;
+    overflow: auto;
+    border: 5px solid black;
+    background-color: #d5d2d2;
+    z-index: 1;
+}
+
+.loader-container {
+    position: fixed;
+    top: var(--header-height, 70px);
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(3px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding-right: 20px;
+}
+
+.loader {
+    border: 6px solid #aaccf7;
+    /* Match your theme color */
+    border-top: 6px solid #07213c;
+    /* Contrast color for spinning effect */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+    
+    /* Spinning animation */
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#html5-qrcode-button-file-selection,
+#html5-qrcode-button-camera-stop,
+#html5-qrcode-button-camera-permission,
+#html5-qrcode-button-camera-start {
+    background-color: #007BFF;
+    color: #fff;
+    width: 200px;
+    height: 45px;
+    margin: 0px 0 7px 0;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+#html5-qrcode-button-camera-permission,
+#html5-qrcode-button-camera-start {
+    margin: 40px 0 7px 0;
+}
+
+#html5-qrcode-anchor-scan-type-change {
+    color: #0056b3;
+    cursor: pointer;
+}
+
+#reader__scan_region img {
+    content: url('/images/codeScanner.jpg');
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .loader-container{
+        top: var(--header-height, 150px);
+    }
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+
+    nav {
+        margin-top: 10px;
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .hero {
+        height: 400px;
+    }
+
+    .hero-content h1 {
+        font-size: 2em;
+    }
+
+    .hero-content p {
+        font-size: 1em;
+    }
+
+    .btn-hero {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    .service-card {
+        width: 100%;
+    }
+
+    .login-box {
+        width: 90%;
+        max-width: 350px;
+        height: auto;
+        padding: 20px;
+    }
+
+    .popUpVal,
+    .popUpErr {
+        max-width: 300px;
+        right: 10px;
+        left: auto;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        z-index: 1000;
+    }
+
+    .popUpVal .btnAnnuller,
+    .popUpErr .btnAnnuller {
+        margin-top: 10px;
+        width: 100%;
+        max-width: 150px;
+    }
+
+    .popUpVal .close-btn,
+    .popUpErr .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-section{
+        max-height: 480px;
+    }
+    .hero-content h1 {
+        font-size: 1.5em;
+    }
+
+    .hero-content p {
+        font-size: 0.9em;
+    }
+
+    .service-card {
+        width: 100%;
+    }
+
+    .login-box {
+        padding: 20px;
+    }
+
+    .popUpVal,
+    .popUpErr {
+        max-width: 190px;
+        right: 10px;
+        left: auto;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+        z-index: 1000;
+    }
+
+    .popUpVal .btnAnnuller,
+    .popUpErr .btnAnnuller {
+        margin-top: 10px;
+        width: 100%;
+        max-width: 150px;
+    }
+
+    .popUpVal .close-btn,
+    .popUpErr .close-btn {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+    }
+}
